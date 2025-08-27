@@ -1,4 +1,4 @@
-package com.kama.notes.config;
+package kamanotes.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

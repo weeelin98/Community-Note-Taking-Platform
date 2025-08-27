@@ -1,7 +1,7 @@
-package com.kama.notes.config;
+package kamanotes.config;
 
-import com.kama.notes.filter.TraceIdFilter;
-import com.kama.notes.interceptor.TokenInterceptor;
+import kamanotes.filter.TraceIdFilter;
+import kamanotes.interceptor.TokenInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
