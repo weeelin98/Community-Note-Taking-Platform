@@ -1,10 +1,10 @@
-package com.kama.notes.service.impl;
+package kamanotes.service.impl;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kama.notes.model.enums.redisKey.RedisKey;
-import com.kama.notes.service.EmailService;
-import com.kama.notes.task.email.EmailTask;
-import com.kama.notes.utils.RandomCodeUtil;
+import kamanotes.model.enums.redisKey.RedisKey;
+import kamanotes.service.EmailService;
+import kamanotes.task.email.EmailTask;
+import kamanotes.utils.RandomCodeUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -15,11 +15,11 @@ import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 @Service
-public class NEmailServiceImpl implements{
+public class EmailServiceImpl implements EmailService {
     @Autowired
     private ObjectMapper objectMapper;
 
-    @AutowiredEmailService
+    @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
     @Value("${mail.verify-code.limit-expire-seconds}")

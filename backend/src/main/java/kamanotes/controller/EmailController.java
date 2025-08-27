@@ -1,8 +1,8 @@
-package com.kama.notes.controller;
+package kamanotes.controller;
 
-import com.kama.notes.model.base.ApiResponse;
-import com.kama.notes.service.EmailService;
-import com.kama.notes.utils.ApiResponseUtil;
+import kamanotes.model.base.ApiResponse;
+import kamanotes.service.EmailService;
+import kamanotes.utils.ApiResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 
 @RestController
 @RequestMapping("/api/email")
-public class NEmailController {
+public class EmailController {
     @Autowired
     private EmailService emailService;
 

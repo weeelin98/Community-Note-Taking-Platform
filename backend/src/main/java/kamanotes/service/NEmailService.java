@@ -1,4 +1,4 @@
-package com.kama.notes.service.impl;
+package kamanotes.service;
 
 public interface NEmailService
 {

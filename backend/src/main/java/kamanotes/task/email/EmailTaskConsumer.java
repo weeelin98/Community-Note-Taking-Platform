@@ -1,9 +1,9 @@
-package com.kama.notes.service.impl;
+package kamanotes.task.email;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.kama.notes.model.enums.redisKey.RedisKey;
-import com.kama.notes.task.email.EmailTask;
+import kamanotes.model.enums.redisKey.RedisKey;
+import kamanotes.task.email.EmailTask;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -24,7 +24,7 @@ public class NEmailTaskConsumer {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
 
-    @Value("827333717@qq.com")
+    @Value("${spring.mail.username}")
     private String from;
 
     @Scheduled(fixedDelay = 3000)
@@ -49,8 +49,8 @@ public class NEmailTaskConsumer {
             SimpleMailMessage mailMessage = new SimpleMailMessage();
             mailMessage.setFrom(from);
             mailMessage.setTo(email);
-            mailMessage.setSubject("KamaNote- Verification Code");
-            mailMessage.setText("Your Code is:" + verificationCode + "，Expired in" + 5 + "minutes.Thank you.");
+            mailMessage.setSubject("KamaNote - Verification Code");
+            mailMessage.setText("Your Code is: " + verificationCode);
 
             mailSender.send(mailMessage);
 

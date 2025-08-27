@@ -1,4 +1,4 @@
-package com.kama.notes.config;
+package kamanotes.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @Version v1.0
  */
 @Configuration
-@MapperScan("com.kama.notes.mapper")
+@MapperScan("kamanotes.mapper")
 @EnableTransactionManagement
 public class MyBatisConfig {
 }

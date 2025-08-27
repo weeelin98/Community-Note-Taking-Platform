@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: community-notes
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    url: jdbc:mysql://localhost:3306/community_notes?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 2000
+  mail:
+    host: smtp.qq.com
+    port: 465
+    username: your@qq.com
+    password: your_app_password
+    properties:
+      mail:
+        smtp:
+          auth: true
+          ssl:
+            enable: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+    protocol: smtps
+    default-encoding: UTF-8
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: kamanotes.model.entity
+
+jwt:
+  secret: abc123
+  expiration: 2592000
+
+server:
+  port: 8080
+
+mail:
+  verify-code:
+    expire-minutes: 15
+    limit-expire-seconds: 60
+    template-path: "templates/mail/verify-code.html"
+
+upload:
+  path: /Users/weilin/GithubNotePlatform/Community-Note-Taking-Platform/backend/tmp/uploads
+  url-prefix: http://localhost:8080/images
+
+

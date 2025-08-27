@@ -1,9 +1,9 @@
-package com.kama.notes.service.impl;
+package kamanotes.task.email;
 
 import lombok.Data;
 
 @Data
-public class NEmailTask {
+public class EmailTask {
     private String email;
     private String code;
     private long timestamp;
